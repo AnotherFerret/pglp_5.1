@@ -1,13 +1,16 @@
 package annuaire;
 
-import java.sql.Connection;
 
 public class DAOfactory {
 
 	
-	public static DAO<Personnel> getPersonnelDAO(Connection connect)
+	public static DAO<Personnel> getPersonnelDAO()
 	{
-		return new DAOPersonnel(connect);
+		return new DAOPersonnel();
+	}
+	public static DAO<GroupePersonnel> getGroupeDAO()
+	{
+		return new DAOGroupePersonnel();
 	}
 	
 

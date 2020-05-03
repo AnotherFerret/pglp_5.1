@@ -1,12 +1,13 @@
 package annuaire;
 
-import java.sql.Connection;
 
 public class DAOPersonnel extends DAO<Personnel> {
 	
-	public DAOPersonnel(Connection connect)
+	private static final long serialVersionUID = 9116647166855351702L;
+
+	public DAOPersonnel()
 	{
-		super(connect);
+		super();
 	}
 	
 	@Override

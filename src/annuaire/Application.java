@@ -39,19 +39,17 @@ enum Application {
 		GroupePersonnel gp2 = new GroupePersonnel();
 		GroupePersonnel gpall = new GroupePersonnel();
 		
-		//gp1.AddPersonnel(p1);
-		//gp1.AddPersonnel(p2);
+		gp1.AddPersonnel(p1);
+		gp1.AddPersonnel(p2);
 		
-		//gp2.AddPersonnel(p1);
+		gp2.AddPersonnel(p1);
 		
-		//gpall.AddPersonnel(gp1);
-		//gpall.AddPersonnel(gp2);
+		gpall.AddPersonnel(gp1);
+		gpall.AddPersonnel(gp2);
 		
-		//System.out.println(gpall.ShowValues());
-		//gp1.ShowValues();
-		//p1.ShowValues();
-		
-		System.out.println("---Serializing---");
+		System.out.println("---Serializing : ---");
+		System.out.println(p1.ShowValues());
+		System.out.println(p2.ShowValues());
 		
 		File f = new File("tmp");
 		try {
@@ -66,7 +64,7 @@ enum Application {
 			e.printStackTrace();
 		}
 		
-		System.out.println("---Deserializing---");
+		System.out.println("---Deserializing : ---");
 		
 		FileInputStream file;
 		try {
@@ -77,8 +75,7 @@ enum Application {
 			in.close();
 			file.close();
 			
-			System.out.println(p1.ShowValues());
-			System.out.println(p2.ShowValues());
+
 			System.out.println(p3.ShowValues());
 			System.out.println(p4.ShowValues());
 			

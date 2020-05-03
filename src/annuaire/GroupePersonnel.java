@@ -2,7 +2,7 @@ package annuaire;
 
 import java.util.HashSet;
 
-public class GroupePersonnel implements Groupe{
+public class GroupePersonnel extends IsSerializable implements Groupe {
 	
 	private HashSet<Groupe> employe = new HashSet<Groupe>();
 	

@@ -3,7 +3,7 @@ package annuaire;
 import java.time.LocalDate;
 import java.util.HashSet;
 
-public class Personnel implements Groupe{
+public class Personnel extends IsSerializable implements Groupe{
 
 	private String nom;
 	private String prenom;

@@ -5,6 +5,8 @@ import java.util.HashSet;
 
 public class Personnel extends IsSerializable implements Groupe{
 
+
+	private static final long serialVersionUID = -3602409468016637133L;
 	private String nom;
 	private String prenom;
 	private String fonction;
@@ -77,4 +79,6 @@ public class Personnel extends IsSerializable implements Groupe{
 		return this.nom + this.prenom + this.fonction + this.datenaissance + phones;
 	}
 	
+
+
 }

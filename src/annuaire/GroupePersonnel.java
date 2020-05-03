@@ -1,9 +1,12 @@
 package annuaire;
 
+
 import java.util.HashSet;
 
 public class GroupePersonnel extends IsSerializable implements Groupe {
 	
+
+	private static final long serialVersionUID = 6802571326442599493L;
 	private HashSet<Groupe> employe = new HashSet<Groupe>();
 	
 	@Override
@@ -28,4 +31,6 @@ public class GroupePersonnel extends IsSerializable implements Groupe {
 	{
 		employe.remove(p1);
 	}
+
+	
 }

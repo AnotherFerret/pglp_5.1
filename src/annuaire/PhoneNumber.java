@@ -1,7 +1,10 @@
 package annuaire;
 
-public class PhoneNumber {
 
+public class PhoneNumber extends IsSerializable {
+
+
+	private static final long serialVersionUID = -9198194174273914699L;
 	private String phone; 
 	
 	public PhoneNumber(String phone)
@@ -21,4 +24,6 @@ public class PhoneNumber {
 	{
 		return this.phone;
 	}
+
+
 }

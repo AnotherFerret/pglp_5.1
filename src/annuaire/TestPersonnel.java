@@ -3,9 +3,11 @@ package annuaire;
 import static org.junit.Assert.*;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.time.LocalDate;
 import java.util.HashSet;
@@ -53,6 +55,7 @@ public class TestPersonnel {
 	@Test
 	public void SerializationPersonnelTest()
 	{
+		//serialisation
 		File f = new File("tmp");
 		try {
 			ObjectOutputStream oos =  new ObjectOutputStream(new FileOutputStream(f)) ;
@@ -64,6 +67,28 @@ public class TestPersonnel {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-	}
+		
+		//objets recevant la lecture
+		Personnel p3 = null;
+		Personnel p4 = null;
+		
+		//deserialisation
+		FileInputStream file;
+		try {
+			file = new FileInputStream("tmp");
+			ObjectInputStream in = new ObjectInputStream(file);
+			p3 = (Personnel)in.readObject();
+			p4 = (Personnel)in.readObject();
+			in.close();
+			file.close();
 
+		} catch (FileNotFoundException e1) {
+			e1.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}	
+		assertEquals(p1.ShowValues() + p2.ShowValues(), p3.ShowValues() + p4.ShowValues());
+	}
 }

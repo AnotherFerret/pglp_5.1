@@ -39,17 +39,17 @@ enum Application {
 		GroupePersonnel gp2 = new GroupePersonnel();
 		GroupePersonnel gpall = new GroupePersonnel();
 		
-		gp1.AddPersonnel(p1);
-		gp1.AddPersonnel(p2);
+		//gp1.AddPersonnel(p1);
+		//gp1.AddPersonnel(p2);
 		
-		gp2.AddPersonnel(p1);
+		//gp2.AddPersonnel(p1);
 		
-		gpall.AddPersonnel(gp1);
-		gpall.AddPersonnel(gp2);
+		//gpall.AddPersonnel(gp1);
+		//gpall.AddPersonnel(gp2);
 		
-		System.out.println(gpall.ShowValues());
-		gp1.ShowValues();
-		p1.ShowValues();
+		//System.out.println(gpall.ShowValues());
+		//gp1.ShowValues();
+		//p1.ShowValues();
 		
 		System.out.println("---Serializing---");
 		
@@ -57,6 +57,7 @@ enum Application {
 		try {
 			ObjectOutputStream oos =  new ObjectOutputStream(new FileOutputStream(f)) ;
 			oos.writeObject(p1);
+			oos.writeObject(p2);
 			oos.close();
 			
 		} catch (FileNotFoundException e) {
@@ -72,10 +73,14 @@ enum Application {
 			file = new FileInputStream("tmp");
 			ObjectInputStream in = new ObjectInputStream(file);
 			Personnel p3 = (Personnel)in.readObject();
+			Personnel p4 = (Personnel)in.readObject();
 			in.close();
 			file.close();
 			
-			p3.ShowValues();
+			System.out.println(p1.ShowValues());
+			System.out.println(p2.ShowValues());
+			System.out.println(p3.ShowValues());
+			System.out.println(p4.ShowValues());
 			
 		} catch (FileNotFoundException e1) {
 			// TODO Auto-generated catch block
@@ -87,8 +92,5 @@ enum Application {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
-		
-		
 	}					
 }

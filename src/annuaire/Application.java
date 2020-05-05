@@ -37,15 +37,11 @@ enum Application {
 		
 		GroupePersonnel gp1 = new GroupePersonnel();
 		GroupePersonnel gp2 = new GroupePersonnel();
-		GroupePersonnel gpall = new GroupePersonnel();
 		
 		gp1.AddPersonnel(p1);
 		gp1.AddPersonnel(p2);
 		
 		gp2.AddPersonnel(p1);
-		
-		gpall.AddPersonnel(gp1);
-		gpall.AddPersonnel(gp2);
 		
 		DAOPersonnel daop = new DAOPersonnel();
 		try {

@@ -79,6 +79,11 @@ public class Personnel extends IsSerializable implements Groupe{
 		return this.nom + this.prenom + this.fonction + this.datenaissance + phones;
 	}
 	
+	public String getID()
+	{
+		return this.nom + this.prenom;
+	}
+	
 
 
 }

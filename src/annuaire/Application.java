@@ -47,47 +47,18 @@ enum Application {
 		gpall.AddPersonnel(gp1);
 		gpall.AddPersonnel(gp2);
 		
-		System.out.println("---Serializing : ---");
-		System.out.println(p1.ShowValues());
-		System.out.println(p2.ShowValues());
-		
-		File f = new File("tmp");
+		DAOPersonnel daop = new DAOPersonnel();
 		try {
-			ObjectOutputStream oos =  new ObjectOutputStream(new FileOutputStream(f)) ;
-			oos.writeObject(p1);
-			oos.writeObject(p2);
-			oos.close();
-			
+			daop.create(p1);
+			daop.create(p2);
 		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		
-		System.out.println("---Deserializing : ---");
-		
-		FileInputStream file;
-		try {
-			file = new FileInputStream("tmp");
-			ObjectInputStream in = new ObjectInputStream(file);
-			Personnel p3 = (Personnel)in.readObject();
-			Personnel p4 = (Personnel)in.readObject();
-			in.close();
-			file.close();
-			
-
-			System.out.println(p3.ShowValues());
-			System.out.println(p4.ShowValues());
-			
-		} catch (FileNotFoundException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		
 	}					
 }

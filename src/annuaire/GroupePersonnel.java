@@ -32,5 +32,10 @@ public class GroupePersonnel extends IsSerializable implements Groupe {
 		employe.remove(p1);
 	}
 
+	public String getID() {
+		
+		return this.ShowValues();
+	}
+
 	
 }
